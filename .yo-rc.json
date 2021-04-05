@@ -37,7 +37,9 @@
     "blueprints": [],
     "skipClient": true,
     "skipUserManagement": true,
-    "prettierJava": true
+    "prettierJava": true,
+    "entities": ["Facebook", "UserApp", "Relation", "MatchRelation", "UnmatchRelation", "Message", "ReportUser", "Location", "Country"],
+    "lastLiquibaseTimestamp": 1617618470000
   },
   "git-provider": "GitHub",
   "git-company": "tmrfcb",

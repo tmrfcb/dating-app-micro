@@ -1,0 +1,47 @@
+{
+  "name": "Message",
+  "fields": [
+    {
+      "fieldName": "senderId",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "receiverId",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "messageContent",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "messageTitle",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "text"
+    },
+    {
+      "fieldName": "messageDate",
+      "fieldType": "ZonedDateTime"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "matchRelation",
+      "otherEntityRelationshipName": "message",
+      "relationshipName": "matchRelation"
+    }
+  ],
+  "entityTableName": "message",
+  "dto": "no",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "microserviceName": "datingApp",
+  "clientRootFolder": "datingApp",
+  "databaseType": "sql",
+  "changelogDate": "20210405102747"
+}

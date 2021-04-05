@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd">
+    <!--
+        Added the constraints for entity Relation.
+    -->
+    <changeSet id="20210405102744-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="match_relation_id"
+                                 baseTableName="relation"
+                                 constraintName="fk_relation__match_relation_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="match_relation"/>
+
+        <addForeignKeyConstraint baseColumnNames="unmatch_relation_id"
+                                 baseTableName="relation"
+                                 constraintName="fk_relation__unmatch_relation_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="unmatch_relation"/>
+
+        <addForeignKeyConstraint baseColumnNames="user_app_id"
+                                 baseTableName="relation"
+                                 constraintName="fk_relation__user_app_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="user_app"/>
+    </changeSet>
+</databaseChangeLog>

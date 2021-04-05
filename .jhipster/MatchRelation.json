@@ -1,0 +1,37 @@
+{
+  "name": "MatchRelation",
+  "fields": [
+    {
+      "fieldName": "matchDate",
+      "fieldType": "ZonedDateTime"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "message",
+      "otherEntityRelationshipName": "matchRelation",
+      "relationshipName": "message"
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "relation",
+      "otherEntityRelationshipName": "matchRelation",
+      "relationshipName": "relation",
+      "ownerSide": false
+    }
+  ],
+  "entityTableName": "match_relation",
+  "dto": "no",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "microserviceName": "datingApp",
+  "clientRootFolder": "datingApp",
+  "databaseType": "sql",
+  "changelogDate": "20210405102745"
+}

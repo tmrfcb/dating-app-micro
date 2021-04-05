@@ -1,0 +1,53 @@
+{
+  "name": "Location",
+  "fields": [
+    {
+      "fieldName": "streetAddress",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "postalCode",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "city",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "stateProvince",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "gps",
+      "fieldType": "Float"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "userApp",
+      "otherEntityRelationshipName": "location",
+      "relationshipName": "userApp"
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "country",
+      "otherEntityRelationshipName": "location",
+      "relationshipName": "country",
+      "ownerSide": false
+    }
+  ],
+  "entityTableName": "location",
+  "dto": "no",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "microserviceName": "datingApp",
+  "clientRootFolder": "datingApp",
+  "databaseType": "sql",
+  "changelogDate": "20210405102749"
+}
