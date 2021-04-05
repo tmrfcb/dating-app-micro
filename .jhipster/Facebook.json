@@ -1,0 +1,26 @@
+{
+  "name": "Facebook",
+  "fields": [],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "userApp",
+      "otherEntityRelationshipName": "facebook",
+      "relationshipName": "userApp",
+      "ownerSide": false
+    }
+  ],
+  "entityTableName": "facebook",
+  "dto": "no",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "microserviceName": "datingApp",
+  "clientRootFolder": "datingApp",
+  "databaseType": "sql",
+  "changelogDate": "20210405102742"
+}

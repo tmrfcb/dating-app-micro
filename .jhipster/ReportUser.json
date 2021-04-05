@@ -1,0 +1,32 @@
+{
+  "name": "ReportUser",
+  "fields": [
+    {
+      "fieldName": "reportId",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "userId",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "cause",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "text"
+    }
+  ],
+  "relationships": [],
+  "entityTableName": "report_user",
+  "dto": "no",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "microserviceName": "datingApp",
+  "clientRootFolder": "datingApp",
+  "databaseType": "sql",
+  "changelogDate": "20210405102748"
+}

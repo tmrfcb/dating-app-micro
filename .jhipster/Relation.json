@@ -1,0 +1,49 @@
+{
+  "name": "Relation",
+  "fields": [
+    {
+      "fieldName": "userIdOfOther",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "relationType",
+      "fieldType": "RelationType",
+      "fieldValues": "LIKE,DISLIKE,SUPERLIKE"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "matchRelation",
+      "otherEntityRelationshipName": "relation",
+      "relationshipName": "matchRelation",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "unmatchRelation",
+      "otherEntityRelationshipName": "relation",
+      "relationshipName": "unmatchRelation",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "userApp",
+      "otherEntityRelationshipName": "relation",
+      "relationshipName": "userApp"
+    }
+  ],
+  "entityTableName": "relation",
+  "dto": "no",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "microserviceName": "datingApp",
+  "clientRootFolder": "datingApp",
+  "databaseType": "sql",
+  "changelogDate": "20210405102744"
+}
