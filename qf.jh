@@ -1,0 +1,101 @@
+
+
+
+
+
+
+
+
+
+
+
+entity Facebook {
+
+}
+
+entity UserApp {
+	firstName String,
+	lastName String,
+	email String,
+	phoneNumber String,
+	birthDate LocalDate
+}
+entity Relation {
+    userIdOfOther String
+    relationType RelationType
+}
+entity MatchRelation {
+    matchDate ZonedDateTime
+}
+entity UnmatchRelation {
+    unMatchDate ZonedDateTime,
+}
+entity Message {
+    senderId String,
+    receiverId String,
+    messageContent String
+    messageTitle TextBlob,
+    messageDate ZonedDateTime
+}
+
+entity ReportUser {
+	reportId String,
+    userId String,
+    cause TextBlob
+}
+entity Location {
+	streetAddress String,
+	postalCode String,
+	city String,
+	stateProvince String,
+    gps Float
+}
+entity Country {
+	countryName String
+}
+relationship OneToOne {
+	UserApp{facebook} to Facebook{userApp}
+}
+relationship OneToMany {
+	UserApp{relation} to Relation{userApp} 
+}
+
+relationship OneToOne {
+	Relation{matchRelation} to MatchRelation{relation}
+}
+relationship OneToOne {
+	Relation{unmatchRelation} to UnmatchRelation{relation}
+}
+
+relationship OneToMany {
+	MatchRelation{message} to Message
+}
+
+relationship OneToMany {
+	Location{userApp} to UserApp{location}
+}
+
+relationship OneToOne {
+	Country{location} to Location{country}
+}
+
+
+
+enum RelationType {
+    LIKE, DISLIKE, SUPERLIKE
+}
+
+
+
+ // Set pagination options
+paginate UserApp with infinite-scroll
+paginate all with pagination except UserApp
+
+// Use Data Transfert Objects (DTO)
+// dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl except UserApp
+
+// Set an angular suffix
+// angularSuffix * with mySuffix
